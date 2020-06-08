@@ -6,6 +6,7 @@
 
 :root {
     --text-color: #f1f1f1;
+    --font-family-title: 'Press Start 2P', cursive;
 }
 
 body {
@@ -40,6 +41,7 @@ header {
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 1;
 }
 
 .menu ul {
@@ -49,7 +51,7 @@ header {
 }
 
 .menu li {
-    
+
     list-style: none;
 }
 
@@ -71,7 +73,7 @@ header {
     text-decoration: underline;
 }
 
-.dropdown a:hover{
+.dropdown a:hover {
     text-decoration: none;
 }
 
@@ -125,7 +127,7 @@ header {
 
 .header-content figure figcaption {
     font-size: 1.5em;
-    font-family: 'Press Start 2P', cursive;
+    font-family: var(--font-family-title);
     font-weight: lighter;
     font-style: italic;
 }
@@ -139,6 +141,45 @@ header {
 }
 
 @keyframes arrow-down {
-    from { -webkit-transform: translateY(0); opacity: 0.4 }
-    to { -webkit-transform: translateY(-0.4em); opacity: 0.9 }
+    from {
+        -webkit-transform: translateY(0);
+        opacity: 0.4
+    }
+
+    to {
+        -webkit-transform: translateY(-0.4em);
+        opacity: 0.9
+    }
+}
+
+.comments {
+    min-height: 100vh;
+    padding: 2em;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 46%, rgba(159,159,159,1) 100%);
+}
+
+.comments h2 {
+    font-family: var(--font-family-title);
+    font-size: 2em;
+    margin-top: 1.5em;
+}
+
+.comments .avatar {
+    margin-left: 2em;
+}
+
+.comments p {
+    margin-top: 1.4em;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+@media (min-width: 600px) {
+    .comments .avatar {
+        float: right;
+    }
+
+    .comments img {
+        clip-path: circle(50% at 50% 50%);
+    }
 }
