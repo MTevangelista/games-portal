@@ -24,6 +24,14 @@ body {
     }
 }
 
+/* Se a tela tiver pelo menos 560px vai carregar estes estilos */
+@media (min-width: 560px) {
+    .sub-highlights .grid {
+        /* Informa a quantida de columanas - 2 colunas com 240px*/
+        grid-template-columns: 240px 240px;
+    }
+}
+
 @media (min-width: 625px) {
     body {
         font-size: 22px;
@@ -35,6 +43,7 @@ body {
         background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
     }
 
+    .sub-highlights h2,
     .comments h2 {
         text-align: start;
         font-family: var(--font-family-title);
@@ -66,7 +75,22 @@ body {
     .comments .userComment .arrow-down {
         text-align: center;
     }
+
+    /* .sub-highlights .grid figure {
+        text-align: center;
+    } */
     
+}
+
+/* Se a tela tiver pelo menos 880px vai carregar estes estilos */
+@media (min-width: 880px) {
+    .sub-highlights .grid {
+        /* Informa a quantida de columanas - 3 colunas com 240px*/
+        grid-template-columns: repeat(3, 240px);
+        align-content: center;
+        justify-content: center;
+        height: calc(100vh - 8em - 48px);
+    } 
 }
 
 @keyframes animacaoTitulo {
@@ -265,10 +289,12 @@ header {
 .comments {
     text-align: center; 
     min-height: 100vh;
+    margin-top: 50px;
     padding: 1em;
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
 }
 
+.sub-highlights h2,
 .comments h2 {
     font-family: var(--font-family-title);
     font-size: 1.2em;
@@ -283,11 +309,47 @@ header {
 .comments p {
     margin-top: 1.4em;
     text-align: justify;
-    text-indent: 1em;
+    text-indent: 2em;
 }
 
 .comments .userComments {
     border: 2px solid blanchedalmond;
     border-radius: 10px;
     margin-top: 40px;
+}
+
+.sub-highlights {
+    text-align: center; 
+    min-height: 100vh;
+    padding: 1em;
+}
+
+.sub-highlights .grid {
+    display: grid;
+    /* Define o espaçamento entre cada linha ou cada coluna */
+    gap: 2em;
+}
+
+.sub-highlights figure {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sub-highlights figure img {
+    border-radius: 2%;
+    height: 180px;
+    width: 100%;
+    /* object-fit: cover;
+    object-position: left bottom;
+    transition: transform 500ms; */
+    transition: transform 500ms;
+}
+
+.sub-highlights figure img:hover {
+    transform: scale(.9);
+}
+
+.sub-highlights figcaption {
+   text-align: justify;
+   text-indent: 2em;
 }
