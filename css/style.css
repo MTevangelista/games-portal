@@ -37,12 +37,14 @@ body {
         font-size: 22px;
     }
 
+    .about,
     .comments {
         min-height: 100vh;
         padding: 2em;
         background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
     }
 
+    .about h2,
     .contact h2,
     .sub-highlights h2,
     .comments h2 {
@@ -53,6 +55,7 @@ body {
         margin-bottom: 2em;
     }
 
+    .about .experience,
     .userComment {
         text-align: center;
         border: 3px solid #ccc;
@@ -61,21 +64,23 @@ body {
         margin: 30px auto;
     }
 
+    .about .experience .avatar img,
     .comments .userComment .avatar img {
         margin-top: 1em;
         /* margin-left: 2em; */
         /* float: right; */
     }
 
+    .about .experience p,
     .comments .userComment p {
         margin: 1em;
         text-align: justify;
         text-indent: 1em;
     }
 
-    .comments .userComment .arrow-down {
+    /* .comments .userComment .arrow-down {
         text-align: center;
-    }
+    } */
 }
 
 /* Se a tela tiver pelo menos 880px vai carregar estes estilos */
@@ -294,6 +299,7 @@ header {
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
 }
 
+.about h2,
 .contact h2,
 .sub-highlights h2,
 .comments h2 {
@@ -301,6 +307,7 @@ header {
     font-size: 1.2em;
 }
 
+.about .avatar img,
 .comments .avatar img {
     margin: 10px;
     margin-top: 50px;
@@ -308,6 +315,7 @@ header {
     border: 2px solid wheat;
 }
 
+.about p,
 .comments p {
     margin-top: 1.4em;
     text-align: justify;
@@ -320,6 +328,7 @@ header {
     margin-top: 40px;
 }
 
+.about,
 .sub-highlights {
     text-align: center;
     min-height: 100vh;
@@ -403,4 +412,22 @@ header {
 .contact .box a {
     padding: 10px;
     color: white;
+}
+
+.header-about {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+}
+
+.about {
+    text-align: center;
+    min-height: 100vh;
+    padding: 1em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
 }
