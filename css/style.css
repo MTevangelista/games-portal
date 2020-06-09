@@ -225,6 +225,8 @@ header {
     text-decoration: none;
 }
 
+.contact a:active,
+.contact .box a:hover,
 .menuWeb a:active,
 .menuWeb a:hover {
     background-color: var(--text-color);
@@ -360,7 +362,7 @@ header {
 
 .contact {
     text-align: center;
-    padding: 1em;
+    padding-top: 10px;
     background-color: rgba(159, 159, 159, 1)
 }
 
@@ -385,11 +387,21 @@ header {
 }  
 
 .contact .box ul {
+    border: 1px solid;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.contact .box ul {
     margin-top: 2em;
     display: flex;
     justify-content: space-around;
 }
 
-.contact a {
-    color: black;
+.contact .box a {
+    padding: 10px;
+    color: white;
 }
