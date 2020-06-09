@@ -89,7 +89,7 @@ body {
     }
 }
 
-@keyframes animacaoTitulo {
+@keyframes headerAnimation {
     from {
         transform: scale(0.2) translateY(50vh);
         opacity: 0;
@@ -103,16 +103,15 @@ body {
 
 @keyframes arrow-down {
     from {
-        -webkit-transform: translateY(0);
+        transform: translateY(0);
         opacity: 0.4
     }
 
     to {
-        -webkit-transform: translateY(-0.4em);
+        transform: translateY(-0.4em);
         opacity: 0.9
     }
 }
-
 
 header {
     height: 100vh;
@@ -270,7 +269,7 @@ header {
     width: fit-content;
     transform: scale(0.2) translateY(50vh);
     opacity: 0;
-    animation: 1.2s linear 1s animacaoTitulo forwards;
+    animation: 1.2s linear 1s headerAnimation forwards;
 }
 
 .header-content figure figcaption {
@@ -321,7 +320,6 @@ header {
     margin-top: 40px;
 }
 
-/* .contact, */
 .sub-highlights {
     text-align: center;
     min-height: 100vh;
@@ -362,8 +360,9 @@ header {
 
 .contact {
     text-align: center;
-    padding-top: 10px;
-    background-color: rgba(159, 159, 159, 1)
+    padding-top: 50px;
+    background-color: rgba(159, 159, 159, 1);
+    padding: 1em;
 }
 
 .contact .icons{
