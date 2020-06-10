@@ -23,8 +23,8 @@ const createMobileNavigationBar = (navigation) => {
                         <a href="index.html">Home</a>
                         <a href="#">Jogos</a>
                         <a href="#">Notícias</a>
-                        <a href="About.html">Sobre</a>
-                        <a href="#">Contato</a>
+                        <a href="about.html">Sobre</a>
+                        <a href="contact.html">Contato</a>
                         <a href="#">Login</a>
                         <a href="#">Cadastre-se</a>
                     </div>
@@ -43,7 +43,7 @@ const createWebNavigationBar = (navigation) => {
            <li><a href="#">Jogos</a></li>
            <li><a href="#">Notícias</a></li>
            <li><a href="about.html">Sobre</a></li>
-           <li><a href="#">Contato</a></li>
+           <li><a href="contact.html">Contato</a></li>
            <li>
                 <div class="dropdown">
                    <a href="#">Entrar

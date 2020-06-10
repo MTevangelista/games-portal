@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <!--Arquivos CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+    <!-- Carrega os icons da pagina -->
+    <script src="https://kit.fontawesome.com/15c7c4106e.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="start()">
+    <header class="header-contact">
+        <nav id="navigation"></nav>
+    </header>
+
+
+    <section class="contact" id="contact">
+        <h2>Mensagem</h2>
+        <form action="https://formspree.io/xoqkwjgq" method="POST">
+
+            <label>Nome:</label>
+            <input type="text" name="name" placeholder="Nome" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="Email" required>
+
+            <label>Selecione um jogo</label>
+            <select name="game">
+                <option name="memory-game">Jogo da memória</option>
+                <option name="xadrez">Xadrez</option>
+                <option name="quebra-cabeça">Quebra-cabeça</option>
+                <option name="monopoly">Monopoly</option>
+                <option name="uno" disabled>Uno</option>
+                <option name="tic-tac-toe" disabled>jogo da velha</option>
+            </select>
+
+            <label>Comentários:</label>
+            <textarea name="message" required></textarea>
+            <div class="button-box">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </section>
+
+    <footer class="contact-footer" id="contact-footer">
+        <h2>Contato</h2>
+        <div class="icons">
+            <a target="_blank" href="https://github.com/MTevangelista?tab=repositories">
+                <i class="fab fa-github"></i>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/_matheusrj/">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/matheus01/">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="box">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Jogos</a></li>
+                    <li><a href="#">Notícias</a></li>
+                    <li><a href="About.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/responsive.js"></script>
+</body>
+
+</html>
