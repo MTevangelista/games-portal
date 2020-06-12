@@ -3,35 +3,6 @@ function start() {
     createBoard()
 }
 
-function createBoard() {
-    const cards = [
-        { id: 'cardFront', path: './images/aws.svg' },
-        { id: 'cardFront', path: './images/code.svg' },
-        { id: 'cardFront', path: './images/html5.svg' },
-        { id: 'cardFront', path: './images/js.svg' },
-        { id: 'cardFront', path: './images/nodejs.svg' },
-        { id: 'cardFront', path: './images/npm.svg' },
-        { id: 'cardFront', path: './images/vuejs.svg' }
-    ]
-    const cardFront = './images/front-face.svg'
-    const cardBoard = document.getElementById('cardBoard')
-    const boardLengh = 16
-
-    for (let index = 1; index <= boardLengh; index++) {
-            console.log(boardLengh);
-            let div_card = document.createElement("div")
-            div_card.innerHTML +=
-                `
-                    <div class="card" id="${index}">
-                        <figure>
-                            <img src="${cardFront}">
-                        </figure>
-                    </div>
-                `
-            cardBoard.appendChild(div_card)
-    }
-}
-
 function responsive() {
     const width = screen.width
     const navigation = document.getElementById('navigation')
@@ -90,4 +61,37 @@ const createWebNavigationBar = (navigation) => {
             </li>
         </ul>
     `
+}
+
+// Memory-game
+const cardBoard = document.getElementById('cardBoard')
+const boardLengh = 15
+let cards = [
+    { id: 'aws0', path: './images/aws.svg' },
+    { id: 'aws1', path: './images/aws.svg' },
+    { id: 'html50', path: './images/html5.svg' },
+    { id: 'html51', path: './images/html5.svg' },
+    { id: 'js0', path: './images/js.svg' },
+    { id: 'js1', path: './images/js.svg' },
+    { id: 'nodejs0', path: './images/nodejs.svg' },
+    { id: 'nodejs1', path: './images/nodejs.svg' },
+    { id: 'vuejs0', path: './images/vuejs.svg', },
+    { id: 'vuejs1', path: './images/vuejs.svg', },
+    { id: 'code0', path: './images/code.svg', },
+    { id: 'code1', path: './images/code.svg', },
+    { id: 'npm0', path: './images/npm.svg' },
+    { id: 'npm1', path: './images/npm.svg' },
+    { id: 'react0', path: './images/react.svg' },
+    { id: 'react1', path: './images/react.svg' },
+]
+
+function createBoard() {
+    for (card of cards) {
+            cardBoard.innerHTML +=
+                `
+                    <div class="card">
+                        <img id="${card.id}" src="${card.path}" onclick="checkCard(${card.id})">                        
+                    </div>
+                `
+    }
 }
