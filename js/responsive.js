@@ -66,6 +66,7 @@ const createWebNavigationBar = (navigation) => {
 // Memory-game
 const cardBoard = document.getElementById('cardBoard')
 const btnStart = document.getElementById('btnStart')
+const cardBack = './images/front-face.svg'
 const boardLengh = 15
 let cards = [
     { id: 'aws0', path: './images/aws.svg' },
@@ -89,12 +90,39 @@ let cards = [
 function createBoard() {
     for (card of cards) {
             cardBoard.innerHTML +=
-                `
-                    <div class="card">
-                        <img id="${card.id}" src="${card.path}" onclick="checkCard(${card.id})">                        
-                    </div>
+                `              
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <img id="${card.id}" src="${card.path}" onclick="checkCard(${card.id})"> 
+                            </div>
+                            <div class="flip-card-back">
+                                <img id="cardBack" src="${cardBack}">
+                            </div>
+                        </div>
+                    </div>                   
                 `
     }
+}
+
+async function startGame(){
+    cardBoard.innerHTML = ''
+    btnStart.disabled = true
+    cards = shuffle(cards)
+
+    for (card of cards) {
+        cardBoard.innerHTML +=
+            `
+                <div class="card">
+                        <div clas="front">
+                            <img id="${card.id}" src="${card.path}" onclick="checkCard(${card.id})">    
+                        </div>   
+                        <div clas="back">
+                            <img id="cardFront" src="${cardFront}" onclick="checkCard(this)">    
+                        </div>                  
+                    </div>
+            `
+    }   
 }
 
 function shuffle(lista){
@@ -104,23 +132,7 @@ function shuffle(lista){
     return lista
 }
 
-function startGame(){
-    cardBoard.innerHTML = ''
-    btnStart.disabled = true
-    cards = shuffle(cards)
-
-    // for (card of cards){
-    //     let cardsHTML = document.getElementById(`${card.id}`)
-    //     cardsHTML.src = `${card.path}`
-    //     console.log(cardsHTML);
-    // }
-
-    for (card of cards) {
-        cardBoard.innerHTML +=
-            `
-                <div class="card">
-                    <img id="${card.id}" src="${card.path}" onclick="checkCard(${card.id})">                        
-                </div>
-            `
-    }
+function checkCard(card){
+    // cardBoard.innerHTML = ''
+    console.log(card.id);
 }
