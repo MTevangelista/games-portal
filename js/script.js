@@ -64,10 +64,9 @@ const createWebNavigationBar = (navigation) => {
 }
 
 // Memory-game
-const cardBoard = document.getElementById('cardBoard')
+let cardBoard = document.getElementById('cardBoard')
 const btnStart = document.getElementById('btnStart')
-const cardBack = './images/front-face.svg'
-const boardLengh = 15
+const cardBack = './images/dev.svg'
 let cards = [
     { id: 'aws0', path: './images/aws.svg' },
     { id: 'aws1', path: './images/aws.svg' },
@@ -89,14 +88,14 @@ let cards = [
 
 function createBoard() {
     for (card of cards) {
-            cardBoard.innerHTML +=
-                `              
+        cardBoard.innerHTML +=
+            `              
                     <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                            <img id="${card.id}" src="${card.path}" onclick="checkCard(${card.id})"> 
+                        <div class="flip-card-inner" id="${card.id}" onclick="checkCard(${card.id})">
+                            <div class="card-front">
+                                <img id="card_${card.id}" src="${card.path}"> 
                             </div>
-                            <div class="flip-card-back">
+                            <div class="card-back">
                                 <img id="cardBack" src="${cardBack}">
                             </div>
                         </div>
@@ -105,34 +104,40 @@ function createBoard() {
     }
 }
 
-async function startGame(){
+function startGame() {
     cardBoard.innerHTML = ''
     btnStart.disabled = true
+    
     cards = shuffle(cards)
 
-    for (card of cards) {
-        cardBoard.innerHTML +=
-            `
-                <div class="card">
-                        <div clas="front">
-                            <img id="${card.id}" src="${card.path}" onclick="checkCard(${card.id})">    
-                        </div>   
-                        <div clas="back">
-                            <img id="cardFront" src="${cardFront}" onclick="checkCard(this)">    
-                        </div>                  
-                    </div>
-            `
-    }   
+    createBoard()
+    
+    setTimeout(function () {
+        for (card of cards){
+            flip(card)
+        }
+        
+    }, 1500)
 }
 
-function shuffle(lista){
-    lista.sort(function() {
+const shuffle = lista => {
+    lista.sort(function () {
         return .5 - Math.random()
     })
     return lista
 }
 
-function checkCard(card){
-    // cardBoard.innerHTML = ''
-    console.log(card.id);
+const flip = (card) => {
+    let cardHTML =  document.getElementById(`${card.id}`)
+    cardHTML.classList.add("flip");
+}
+
+const unFlip = (card) => {
+    let cardHTML = document.getElementById(`${card.id}`)
+    cardHTML.classList.remove("flip");
+}
+
+const checkCard = (card) => {
+    console.log('id=', card.id);
+    unFlip(card)
 }
