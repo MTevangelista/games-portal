@@ -64,6 +64,7 @@ const createWebNavigationBar = (navigation) => {
 }
 
 // Memory-game
+
 let cardBoard = document.getElementById('cardBoard')
 const btnStart = document.getElementById('btnStart')
 const cardBack = './images/dev.svg'
@@ -85,6 +86,7 @@ let cards = [
     { id: 'react0', path: './images/react.svg' },
     { id: 'react1', path: './images/react.svg' },
 ]
+let choosedCards = []
 
 function createBoard() {
     for (card of cards) {
@@ -138,6 +140,24 @@ const unFlip = (card) => {
 }
 
 const checkCard = (card) => {
-    console.log('id=', card.id);
+    console.log(cards.length);
+    console.log(choosedCards.length);
+    // console.log('id=', card.id);
     unFlip(card)
+    choosedCards.push(card.id)
+    if (!gameOver()) {
+        console.log('Jogo continua');
+    } else {
+        console.log('FINALIZADO');
+    }
+   
+    console.log(choosedCards);
+}
+
+const gameOver = () => {
+    if (choosedCards.length == cards.length) {
+        console.log("fim");
+        return true
+    } 
+    return false
 }
