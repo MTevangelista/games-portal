@@ -69,26 +69,27 @@ let cardBoard = document.getElementById('cardBoard')
 const btnStart = document.getElementById('btnStart')
 const cardBack = './images/dev.svg'
 let cards = [
-    { id: 'aws0', value: 'aws', path: './images/aws.svg' },
-    { id: 'aws1', value: 'aws', path: './images/aws.svg' },
-    { id: 'html50', value: 'html', path: './images/html5.svg' },
-    { id: 'html51', value: 'html', path: './images/html5.svg' },
-    { id: 'js0', value: 'js', path: './images/js.svg' },
-    { id: 'js1', value: 'js', path: './images/js.svg' },
-    { id: 'nodejs0', value: 'nodejs', path: './images/nodejs.svg' },
-    { id: 'nodejs1', value: 'nodejs', path: './images/nodejs.svg' },
-    { id: 'vuejs0', value: 'vuejs', path: './images/vuejs.svg', },
-    { id: 'vuejs1', value: 'vuejs', path: './images/vuejs.svg', },
-    { id: 'code0', value: 'code', path: './images/code.svg', },
-    { id: 'code1', value: 'code', path: './images/code.svg', },
-    { id: 'npm0', value: 'npm', path: './images/npm.svg' },
-    { id: 'npm1', value: 'npm', path: './images/npm.svg' },
-    { id: 'react0', value: 'react', path: './images/react.svg' },
-    { id: 'react1', value: 'react', path: './images/react.svg' },
+    { id: 'aws0', order: 0, value: 'aws', path: './images/aws.svg' },
+    { id: 'aws1', order: 1, value: 'aws', path: './images/aws.svg' },
+    { id: 'html50', order: 2, value: 'html', path: './images/html5.svg' },
+    { id: 'html51', order: 3, value: 'html', path: './images/html5.svg' },
+    { id: 'js0', order: 4, value: 'js', path: './images/js.svg' },
+    { id: 'js1', order: 5, value: 'js', path: './images/js.svg' },
+    { id: 'nodejs0', order: 6, value: 'nodejs', path: './images/nodejs.svg' },
+    { id: 'nodejs1', order: 7, value: 'nodejs', path: './images/nodejs.svg' },
+    { id: 'vuejs0', order: 8, value: 'vuejs', path: './images/vuejs.svg', },
+    { id: 'vuejs1', order: 9, value: 'vuejs', path: './images/vuejs.svg', },
+    { id: 'code0', order: 10, value: 'code', path: './images/code.svg', },
+    { id: 'code1', order: 11, value: 'code', path: './images/code.svg', },
+    { id: 'npm0', order: 12, value: 'npm', path: './images/npm.svg' },
+    { id: 'npm1', order: 13, value: 'npm', path: './images/npm.svg' },
+    { id: 'react0', order: 14, value: 'react', path: './images/react.svg' },
+    { id: 'react1', order: 15, value: 'react', path: './images/react.svg' },
 ]
 let choosedCards = []
 let cardValues = []
 let pairs = []
+let counter = 0
 let firstCard, secondCard
 
 function createBoard() {
@@ -175,6 +176,13 @@ const checkCard = (card, value) => {
             choosedCards = []
             break
     }
+
+    setTimeout(function (){
+        if (gameOver()) {
+            resetGame()
+        }
+    }, 1500)
+    
 }
 
 const disableCorrectPairs = () => {
@@ -203,10 +211,21 @@ const disableCard = (firstCard, secondCard) => {
     }
 }
 
-// const gameOver = () => {
-//     if (choosedCards.length == cards.length) {
-//         console.log("fim");
-//         return true
-//     } 
-//     return false
-// }
+const gameOver = () => {
+    if (pairs.length == cards.length) {
+        return true
+    } 
+    return false
+}
+
+const resetGame = () => {
+    pairs = []
+            for (card of cards){
+                card = cards.sort(function(a, b) {
+                    return a.order - b.order
+                })
+            }
+            cardBoard.innerHTML = ''
+            createBoard()
+            btnStart.disabled = false
+}
