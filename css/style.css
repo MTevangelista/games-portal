@@ -696,7 +696,7 @@ form textarea {
     width: 50px;
 }
 
-.disabledbutton {
+.disabledCard {
     pointer-events: none;
-    opacity: 0.4;
+    /* opacity: 0.4; */
 }

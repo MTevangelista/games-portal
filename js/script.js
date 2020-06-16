@@ -156,66 +156,50 @@ const checkCard = (card, value) => {
             secondCard = choosedCards[1]
             unFlip(secondCard)
             disableCard(firstCard, secondCard)
-            if (cardValues[0] == cardValues[1]){
-                console.log('Achou o par');
-                pairs.push(firstCard)
-                pairs.push(secondCard)
-                console.log(pairs);
+            if (cardValues[0] == cardValues[1]) {
+                pairs.push(firstCard, secondCard)
                 setTimeout(function () {
                     enableAllCards()
                     disableCorrectPairs()
-                }, 1000)
-               
+                }, 1500)
             } else {
-                console.log('errouuuuuuu');
-                setTimeout(function (){
+                setTimeout(function () {
                     flip(firstCard)
                     flip(secondCard)
 
                     enableAllCards()
                     disableCorrectPairs()
                 }, 1500)
-            }      
+            }
             cardValues = []
-            choosedCards = []  
-            break  
+            choosedCards = []
+            break
     }
 }
 
 const disableCorrectPairs = () => {
     for (card of pairs) {
-        document.getElementById(`${card.id}`).classList.add("disabledbutton");
+        document.getElementById(`${card.id}`).classList.add("disabledCard");
     }
 }
 
 const enableAllCards = () => {
-    for (cardq of cards){
-        document.getElementById(`${cardq.id}`).classList.remove("disabledbutton");
+    for (card of cards) {
+        document.getElementById(`${card.id}`).classList.remove("disabledCard");
     }
 }
 
 const disableAllCards = () => {
-    for (cardq of cards){
-        document.getElementById(`${cardq.id}`).classList.add("disabledbutton");
+    for (card of cards) {
+        document.getElementById(`${card.id}`).classList.add("disabledCard");
     }
 }
 
-const disableCard = (firstCard, secondCard ) => {
+const disableCard = (firstCard, secondCard) => {
     for (card of cards) {
-        if (card.id != firstCard.id && card.id != secondCard.id){
-            document.getElementById(`${card.id}`).classList.add("disabledbutton");
+        if (card.id != firstCard.id && card.id != secondCard.id) {
+            document.getElementById(`${card.id}`).classList.add("disabledCard");
         }
-        // switch (card.id) {
-        //     case firstCard.id:
-        //         console.log('achei a 1');
-        //         break
-        //     case secondCard.id:
-        //         console.log('acheei a 2');
-        //         break
-        //     default:
-        //         document.getElementById(`${card.id}`).classList.add("disabledbutton");
-        //         break
-        // }
     }
 }
 
