@@ -177,12 +177,12 @@ const checkCard = (card, value) => {
             break
     }
 
-    setTimeout(function (){
+    setTimeout(function () {
         if (gameOver()) {
             resetGame()
         }
     }, 1500)
-    
+
 }
 
 const disableCorrectPairs = () => {
@@ -214,18 +214,18 @@ const disableCard = (firstCard, secondCard) => {
 const gameOver = () => {
     if (pairs.length == cards.length) {
         return true
-    } 
+    }
     return false
 }
 
 const resetGame = () => {
     pairs = []
-            for (card of cards){
-                card = cards.sort(function(a, b) {
-                    return a.order - b.order
-                })
-            }
-            cardBoard.innerHTML = ''
-            createBoard()
-            btnStart.disabled = false
+    for (card of cards) {
+        card = cards.sort(function (a, b) {
+            return a.order - b.order
+        })
+    }
+    cardBoard.innerHTML = ''
+    createBoard()
+    btnStart.disabled = false
 }
