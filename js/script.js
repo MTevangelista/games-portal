@@ -69,31 +69,34 @@ let cardBoard = document.getElementById('cardBoard')
 const btnStart = document.getElementById('btnStart')
 const cardBack = './images/dev.svg'
 let cards = [
-    { id: 'aws0', path: './images/aws.svg' },
-    { id: 'aws1', path: './images/aws.svg' },
-    { id: 'html50', path: './images/html5.svg' },
-    { id: 'html51', path: './images/html5.svg' },
-    { id: 'js0', path: './images/js.svg' },
-    { id: 'js1', path: './images/js.svg' },
-    { id: 'nodejs0', path: './images/nodejs.svg' },
-    { id: 'nodejs1', path: './images/nodejs.svg' },
-    { id: 'vuejs0', path: './images/vuejs.svg', },
-    { id: 'vuejs1', path: './images/vuejs.svg', },
-    { id: 'code0', path: './images/code.svg', },
-    { id: 'code1', path: './images/code.svg', },
-    { id: 'npm0', path: './images/npm.svg' },
-    { id: 'npm1', path: './images/npm.svg' },
-    { id: 'react0', path: './images/react.svg' },
-    { id: 'react1', path: './images/react.svg' },
+    { id: 'aws0', value: 'aws', path: './images/aws.svg' },
+    { id: 'aws1', value: 'aws', path: './images/aws.svg' },
+    { id: 'html50', value: 'html', path: './images/html5.svg' },
+    { id: 'html51', value: 'html', path: './images/html5.svg' },
+    { id: 'js0', value: 'js', path: './images/js.svg' },
+    { id: 'js1', value: 'js', path: './images/js.svg' },
+    { id: 'nodejs0', value: 'nodejs', path: './images/nodejs.svg' },
+    { id: 'nodejs1', value: 'nodejs', path: './images/nodejs.svg' },
+    { id: 'vuejs0', value: 'vuejs', path: './images/vuejs.svg', },
+    { id: 'vuejs1', value: 'vuejs', path: './images/vuejs.svg', },
+    { id: 'code0', value: 'code', path: './images/code.svg', },
+    { id: 'code1', value: 'code', path: './images/code.svg', },
+    { id: 'npm0', value: 'npm', path: './images/npm.svg' },
+    { id: 'npm1', value: 'npm', path: './images/npm.svg' },
+    { id: 'react0', value: 'react', path: './images/react.svg' },
+    { id: 'react1', value: 'react', path: './images/react.svg' },
 ]
 let choosedCards = []
+let cardValues = []
+let pairs = []
+let firstCard, secondCard
 
 function createBoard() {
     for (card of cards) {
         cardBoard.innerHTML +=
             `              
                     <div class="flip-card">
-                        <div class="flip-card-inner" id="${card.id}" onclick="checkCard(${card.id})">
+                        <div class="flip-card-inner" id="${card.id}" onclick="checkCard(${card.id}, '${card.value}')">
                             <div class="card-front">
                                 <img id="card_${card.id}" src="${card.path}"> 
                             </div>
@@ -104,25 +107,26 @@ function createBoard() {
                     </div>                   
                 `
     }
+    disableAllCards()
 }
 
 function startGame() {
     cardBoard.innerHTML = ''
     btnStart.disabled = true
-    
+
     cards = shuffle(cards)
 
     createBoard()
-    
+
     setTimeout(function () {
-        for (card of cards){
+        for (card of cards) {
             flip(card)
         }
-        
+        enableAllCards()
     }, 1500)
 }
 
-const shuffle = lista => {
+const shuffle = (lista) => {
     lista.sort(function () {
         return .5 - Math.random()
     })
@@ -130,7 +134,7 @@ const shuffle = lista => {
 }
 
 const flip = (card) => {
-    let cardHTML =  document.getElementById(`${card.id}`)
+    let cardHTML = document.getElementById(`${card.id}`)
     cardHTML.classList.add("flip");
 }
 
@@ -139,25 +143,86 @@ const unFlip = (card) => {
     cardHTML.classList.remove("flip");
 }
 
-const checkCard = (card) => {
-    console.log(cards.length);
-    console.log(choosedCards.length);
-    // console.log('id=', card.id);
-    unFlip(card)
-    choosedCards.push(card.id)
-    if (!gameOver()) {
-        console.log('Jogo continua');
-    } else {
-        console.log('FINALIZADO');
+const checkCard = (card, value) => {
+    choosedCards.push(card)
+    cardValues.push(value)
+
+    switch (choosedCards.length) {
+        case 1:
+            firstCard = choosedCards[0]
+            unFlip(firstCard)
+            break
+        case 2:
+            secondCard = choosedCards[1]
+            unFlip(secondCard)
+            disableCard(firstCard, secondCard)
+            if (cardValues[0] == cardValues[1]){
+                console.log('Achou o par');
+                pairs.push(firstCard)
+                pairs.push(secondCard)
+                console.log(pairs);
+                setTimeout(function () {
+                    enableAllCards()
+                    disableCorrectPairs()
+                }, 1000)
+               
+            } else {
+                console.log('errouuuuuuu');
+                setTimeout(function (){
+                    flip(firstCard)
+                    flip(secondCard)
+
+                    enableAllCards()
+                    disableCorrectPairs()
+                }, 1500)
+            }      
+            cardValues = []
+            choosedCards = []  
+            break  
     }
-   
-    console.log(choosedCards);
 }
 
-const gameOver = () => {
-    if (choosedCards.length == cards.length) {
-        console.log("fim");
-        return true
-    } 
-    return false
+const disableCorrectPairs = () => {
+    for (card of pairs) {
+        document.getElementById(`${card.id}`).classList.add("disabledbutton");
+    }
 }
+
+const enableAllCards = () => {
+    for (cardq of cards){
+        document.getElementById(`${cardq.id}`).classList.remove("disabledbutton");
+    }
+}
+
+const disableAllCards = () => {
+    for (cardq of cards){
+        document.getElementById(`${cardq.id}`).classList.add("disabledbutton");
+    }
+}
+
+const disableCard = (firstCard, secondCard ) => {
+    for (card of cards) {
+        if (card.id != firstCard.id && card.id != secondCard.id){
+            document.getElementById(`${card.id}`).classList.add("disabledbutton");
+        }
+        // switch (card.id) {
+        //     case firstCard.id:
+        //         console.log('achei a 1');
+        //         break
+        //     case secondCard.id:
+        //         console.log('acheei a 2');
+        //         break
+        //     default:
+        //         document.getElementById(`${card.id}`).classList.add("disabledbutton");
+        //         break
+        // }
+    }
+}
+
+// const gameOver = () => {
+//     if (choosedCards.length == cards.length) {
+//         console.log("fim");
+//         return true
+//     } 
+//     return false
+// }

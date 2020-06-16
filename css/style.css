@@ -695,3 +695,8 @@ form textarea {
     height: 60px;
     width: 50px;
 }
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
