@@ -464,11 +464,8 @@ form textarea {
 }
 
 .memory-game {
-    /* border: 1px solid; */
     text-align: center;
-    min-height: 100vh;
     margin-top: 50px;
-    /* background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%); */
 }
 
 .memory-game h1 {
@@ -520,6 +517,7 @@ form textarea {
     /* width: 720px; */
 }
 
+/* O recipiente da caixa flip - defina a largura e a altura para o que quiser. (remova a perspectiva se você não quiser o efeito 3D */
 .flip-card {
     margin: 10px;
     background-color: transparent;
@@ -529,6 +527,7 @@ form textarea {
     /* border-radius: 10%; */
 }
 
+/* Este contêiner é necessário para posicionar as partes frontal e traseira  */
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -539,21 +538,19 @@ form textarea {
     transform-style: preserve-3d;
 }
 
-/* .flip-card-inner:hover {
-    transform: rotateY(180deg);
-} */
-
+/* Faz um giro horizontal ao clicar sobre o recipiente da caixa de giro */
 .flip {
     transform: rotateY(180deg);
 }
 
+/* Posiciona a frente e o verso */
 .card-front,
 .card-back {
     background-color: #ccc;
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
     border-radius: 10%;
     box-shadow: 0px 8px 16px 2px rgba(108, 108, 128, 0.5);

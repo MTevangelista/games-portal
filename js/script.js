@@ -101,7 +101,7 @@ function createBoard() {
                     <div class="flip-card">
                         <div class="flip-card-inner" id="${card.id}" onclick="checkCard(${card.id}, '${card.value}')">
                             <div class="card-front">
-                                <img id="card_${card.id}" src="${card.path}"> 
+                                <img src="${card.path}"> 
                             </div>
                             <div class="card-back">
                                 <img id="cardBack" src="${cardBack}">
@@ -246,6 +246,8 @@ const gameOver = () => {
 
 const resetGame = () => {
     pairs = []
+
+    // Ordena os elementos do array para poder recuperar a posição incial de cada carta
     for (card of cards) {
         card = cards.sort(function (a, b) {
             return a.order - b.order
@@ -256,12 +258,14 @@ const resetGame = () => {
     btnStart.disabled = false
 }
 
+// Local Storage - set
 const saveUserTime = () => {
     let time = endTime - startTime
     times.push(time)
     storage.setItem('times', JSON.stringify(times))
 }
 
+// Local Storage - get
 const showUserTime = () => {
     for (let i = 0; i <= times.length; i++) {
         times.sort(function (a, b) {
