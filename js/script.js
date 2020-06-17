@@ -1,7 +1,7 @@
 function start() {
     responsive()
     createBoard()
-    // showUserTime()
+    showUserTime()
 }
 
 function responsive() {
@@ -237,4 +237,13 @@ const saveUserTime = () => {
     let time = endTime - startTime
     times.push(time)
     storage.setItem('times', JSON.stringify(times))
+}
+
+const showUserTime = () => {
+    for (let i = 0; i <= times.length; i++) {
+        times.sort(function (a, b) {
+            return a - b
+        })
+    }
+    result.innerHTML = `Melhor tempo: ${times[0]}`
 }
