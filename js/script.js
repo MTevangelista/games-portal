@@ -168,6 +168,9 @@ const checkCard = (card, value) => {
                 }, 1500)
             } else {
                 setTimeout(function () {
+                    shakeCard(firstCard)
+                    shakeCard(secondCard)
+
                     flip(firstCard)
                     flip(secondCard)
 
@@ -175,6 +178,8 @@ const checkCard = (card, value) => {
                     disableCorrectPairs()
                 }, 1500)
             }
+            removeShakeCard(firstCard)
+            removeShakeCard(secondCard)
             cardValues = []
             choosedCards = []
             break
@@ -183,9 +188,20 @@ const checkCard = (card, value) => {
         if (gameOver()) {
             endTime = new Date()
             saveUserTime()
+            showUserTime()
             resetGame()
         }
     }, 1500)
+}
+
+const shakeCard = (card) => {
+    let cardHTML = document.getElementById(`${card.id}`)
+    cardHTML.classList.add("shakeCard");
+}
+
+const removeShakeCard = (card) => {
+    let cardHTML = document.getElementById(`${card.id}`)
+    cardHTML.classList.remove("shakeCard");
 }
 
 const disableCorrectPairs = () => {
