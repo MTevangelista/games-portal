@@ -92,7 +92,7 @@ let cardValues = []
 let pairs = []
 let firstCard, secondCard, startTime, endTime
 let storage = window.localStorage;
-let times = JSON.parse(storage.getItem('times'))
+times = []
 
 function createBoard() {
     for (card of cards) {
@@ -267,6 +267,7 @@ const saveUserTime = () => {
 
 // Local Storage - get
 const showUserTime = () => {
+    times = JSON.parse(storage.getItem('times'))
     for (let i = 0; i <= times.length; i++) {
         times.sort(function (a, b) {
             return a - b

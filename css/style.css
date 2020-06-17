@@ -517,7 +517,6 @@ form textarea {
     /* width: 720px; */
 }
 
-/* O recipiente da caixa flip - defina a largura e a altura para o que quiser. (remova a perspectiva se você não quiser o efeito 3D */
 .flip-card {
     margin: 10px;
     background-color: transparent;
@@ -527,7 +526,6 @@ form textarea {
     /* border-radius: 10%; */
 }
 
-/* Este contêiner é necessário para posicionar as partes frontal e traseira  */
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -538,12 +536,10 @@ form textarea {
     transform-style: preserve-3d;
 }
 
-/* Faz um giro horizontal ao clicar sobre o recipiente da caixa de giro */
 .flip {
     transform: rotateY(180deg);
 }
 
-/* Posiciona a frente e o verso */
 .card-front,
 .card-back {
     background-color: #ccc;
@@ -735,18 +731,17 @@ form textarea {
 /* Se a tela tiver pelo menos 880px largura e 981px de altura vai carregar estes estilos */
 @media (min-width: 880px) and (min-height: 981px){
     .cardBoard {
-        width: 700px;
+        width: 800px;
     }
 
     .cardBoard .flip-card {
-        
         margin: 30px;
         height: 120px;
-        width: 100px;
+        width: 120px;
     }
 
     .cardBoard .flip-card img {
         height: 120px;
-        width: 85px;
+        width: 100px;
     } 
 }
