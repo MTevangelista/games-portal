@@ -184,9 +184,16 @@ const checkCard = (card, value) => {
             choosedCards = []
             break
     }
+
     setTimeout(function () {
         if (gameOver()) {
             endTime = new Date()
+            swal({
+                title: "Jogo finalizado!",
+                text: `Tempo da partida: ${endTime - startTime}`,
+                icon: "success",
+                button: "ok",
+              });
             saveUserTime()
             showUserTime()
             resetGame()
