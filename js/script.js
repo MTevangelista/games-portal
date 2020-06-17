@@ -1,6 +1,7 @@
 function start() {
     responsive()
     createBoard()
+    // showUserTime()
 }
 
 function responsive() {
@@ -64,9 +65,9 @@ const createWebNavigationBar = (navigation) => {
 }
 
 // Memory-game
-
 let cardBoard = document.getElementById('cardBoard')
 const btnStart = document.getElementById('btnStart')
+const result = document.getElementById('result')
 const cardBack = './images/dev.svg'
 let cards = [
     { id: 'aws0', order: 0, value: 'aws', path: './images/aws.svg' },
@@ -89,8 +90,9 @@ let cards = [
 let choosedCards = []
 let cardValues = []
 let pairs = []
-let counter = 0
-let firstCard, secondCard
+let firstCard, secondCard, startTime, endTime
+let storage = window.localStorage;
+let times = JSON.parse(storage.getItem('times'))
 
 function createBoard() {
     for (card of cards) {
@@ -112,6 +114,7 @@ function createBoard() {
 }
 
 function startGame() {
+    startTime = new Date()
     cardBoard.innerHTML = ''
     btnStart.disabled = true
 
@@ -176,13 +179,13 @@ const checkCard = (card, value) => {
             choosedCards = []
             break
     }
-
     setTimeout(function () {
         if (gameOver()) {
+            endTime = new Date()
+            saveUserTime()
             resetGame()
         }
     }, 1500)
-
 }
 
 const disableCorrectPairs = () => {
@@ -228,4 +231,10 @@ const resetGame = () => {
     cardBoard.innerHTML = ''
     createBoard()
     btnStart.disabled = false
+}
+
+const saveUserTime = () => {
+    let time = endTime - startTime
+    times.push(time)
+    storage.setItem('times', JSON.stringify(times))
 }

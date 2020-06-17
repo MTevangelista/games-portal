@@ -17,138 +17,6 @@ body {
     height: 100vh; */
 }
 
-/* Se a tela tiver pelo menos 400px vai carregar estes estilos */
-@media (min-width: 400px) {
-    body {
-        font-size: 18px;
-    }
-
-    .cardBoard {
-        width: 400px;
-    }
-
-    .cardBoard .flip-card {
-        height: 70px;
-        width: 70px;
-    }
-
-    .cardBoard .flip-card img{
-        height: 70px;
-        width: 55px;
-    }
-}
-
-/* Se a tela tiver pelo menos 560px vai carregar estes estilos */
-@media (min-width: 560px) {
-    .sub-highlights .grid {
-        /* Informa a quantida de columanas - 2 colunas com 240px*/
-        grid-template-columns: 240px 240px;
-    }
-
-    .cardBoard {
-        width: 420px;
-    }
-
-    .cardBoard .flip-card {
-        height: 80px;
-        width: 70px;
-    }
-
-    .cardBoard .flip-card img{
-        height: 80px;
-        width: 55px;
-    }
-}
-
-@media (min-width: 625px) {
-    body {
-        font-size: 22px;
-    }
-
-    .contact,
-    .about,
-    .comments {
-        min-height: 100vh;
-        padding: 2em;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
-    }
-
-    .contact h2,
-    .about h2,
-    .contact-footer h2,
-    .sub-highlights h2,
-    .comments h2 {
-        text-align: start;
-        font-family: var(--font-family-title);
-        font-size: 2em;
-        margin-top: 3em;
-        margin-bottom: 2em;
-    }
-
-    .about .experience,
-    .userComment {
-        text-align: center;
-        border: 3px solid #ccc;
-        border-radius: 10px;
-        width: 66vw;
-        margin: 30px auto;
-    }
-
-    .about .experience .avatar img,
-    .comments .userComment .avatar img {
-        margin-top: 1em;
-        /* margin-left: 2em; */
-        /* float: right; */
-    }
-
-    .about .experience p,
-    .comments .userComment p {
-        margin: 1em;
-        text-align: justify;
-        text-indent: 1em;
-    }
-
-    .cardBoard {
-        width: 420px;
-    }
-
-    .cardBoard .flip-card {
-        height: 90px;
-        width: 80px;
-    }
-
-    .cardBoard .flip-card img{
-        height: 90px;
-        width: 65px;
-    }
-}
-
-/* Se a tela tiver pelo menos 880px vai carregar estes estilos */
-@media (min-width: 880px) {
-    .sub-highlights .grid {
-        /* Informa a quantida de columanas - 3 colunas com 240px*/
-        grid-template-columns: repeat(3, 240px);
-        align-content: center;
-        justify-content: center;
-        height: calc(100vh - 8em - 48px);
-    }
-
-    .cardBoard {
-        width: 700px;
-    }
-
-    .cardBoard .flip-card {
-        margin: 30px;
-        height: 120px;
-        width: 100px;
-    }
-
-    .cardBoard .flip-card img{
-        height: 120px;
-        width: 85px;
-    }
-}
-
 @keyframes headerAnimation {
     from {
         transform: scale(0.2) translateY(50vh);
@@ -580,7 +448,7 @@ form textarea {
     /* background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%); */
 }
 
-.memory-game h2 {
+.memory-game h1 {
     font-family: var(--font-family-title);
     font-size: 1.2em;
 }
@@ -599,6 +467,11 @@ form textarea {
     width: 200px;
 }
 
+.memory-game .result {
+    text-align: start;
+    margin: 20px 0px 0px 20px;
+}
+
 .memory-game button:active,
 .memory-game button:hover {
     box-shadow: 0px 8px 16px 2px rgba(108, 108, 128, 0.5);
@@ -608,30 +481,6 @@ form textarea {
 .memory-game button:disabled {
     opacity: 0.3;
 }
-
-.cardBoard {
-    background-color: #F0F0F5;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 20px auto auto auto;
-}
-
-.card {
-    background-color: #ccc;
-    box-shadow: 0px 8px 16px 2px rgba(108, 108, 128, 0.5);
-    border-radius: 10%;
-    padding: 10px;
-    margin: 10px;
-}
-
-.cardBoard  img {
-    height: 40px;
-    width: 40px;
-} 
-
 /* --------------- */
 
 .cardBoard {
@@ -699,4 +548,145 @@ form textarea {
 .disabledCard {
     pointer-events: none;
     /* opacity: 0.4; */
+}
+
+/* Se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px) {
+    body {
+        font-size: 18px;
+    }
+
+    .cardBoard {
+        width: 400px;
+    }
+
+    .cardBoard .flip-card {
+        height: 70px;
+        width: 70px;
+    }
+
+    .cardBoard .flip-card img{
+        height: 70px;
+        width: 55px;
+    }
+
+    .memory-game .result {
+        text-align: center;
+    }
+    
+}
+
+/* Se a tela tiver pelo menos 560px vai carregar estes estilos */
+@media (min-width: 560px) {
+    .sub-highlights .grid {
+        /* Informa a quantida de columanas - 2 colunas com 240px*/
+        grid-template-columns: 240px 240px;
+    }
+
+    .cardBoard {
+        width: 420px;
+    }
+
+    .cardBoard .flip-card {
+        height: 80px;
+        width: 70px;
+    }
+
+    .cardBoard .flip-card img{
+        height: 80px;
+        width: 55px;
+    }
+}
+
+@media (min-width: 625px) {
+    body {
+        font-size: 20px;
+    }
+
+    .contact,
+    .about,
+    .comments {
+        min-height: 100vh;
+        padding: 2em;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
+    }
+
+    .contact h2,
+    .about h2,
+    .contact-footer h2,
+    .sub-highlights h2,
+    .comments h2 {
+        text-align: start;
+        font-family: var(--font-family-title);
+        font-size: 2em;
+        margin-top: 3em;
+        margin-bottom: 2em;
+    }
+
+    .about .experience,
+    .userComment {
+        text-align: center;
+        border: 3px solid #ccc;
+        border-radius: 10px;
+        width: 66vw;
+        margin: 30px auto;
+    }
+
+    .about .experience .avatar img,
+    .comments .userComment .avatar img {
+        margin-top: 1em;
+        /* margin-left: 2em; */
+        /* float: right; */
+    }
+
+    .about .experience p,
+    .comments .userComment p {
+        margin: 1em;
+        text-align: justify;
+        text-indent: 1em;
+    }
+
+    .cardBoard {
+        width: 420px;
+    }
+
+    .cardBoard .flip-card {
+        height: 90px;
+        width: 80px;
+    }
+
+    .cardBoard .flip-card img{
+        height: 90px;
+        width: 65px;
+    }
+}
+
+/* Se a tela tiver pelo menos 880px vai carregar estes estilos */
+@media (min-width: 880px) {
+    body {
+        font-size: 22px;
+    }
+
+    .sub-highlights .grid {
+        /* Informa a quantida de columanas - 3 colunas com 240px*/
+        grid-template-columns: repeat(3, 240px);
+        align-content: center;
+        justify-content: center;
+        height: calc(100vh - 8em - 48px);
+    }
+
+    .cardBoard {
+        width: 700px;
+    }
+
+    .cardBoard .flip-card {
+        margin: 30px;
+        height: 120px;
+        width: 100px;
+    }
+
+    .cardBoard .flip-card img{
+        height: 120px;
+        width: 85px;
+    }
 }
