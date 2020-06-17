@@ -1,7 +1,6 @@
 function start() {
     responsive()
     createBoard()
-    showUserTime()
 }
 
 function responsive() {
@@ -111,6 +110,7 @@ function createBoard() {
                 `
     }
     disableAllCards()
+    showUserTime()
 }
 
 function startGame() {
