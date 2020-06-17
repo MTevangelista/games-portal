@@ -513,7 +513,7 @@ form textarea {
     background-color: #F0F0F5;
     border-radius: 10px;
 
-    margin: 10px auto auto auto;
+    margin: 10px auto 10px auto;
     /* width: 720px; */
 }
 
@@ -718,12 +718,12 @@ form textarea {
 
     .cardBoard .flip-card {
         height: 100px;
-        width: 90px;
+        width: 100px;
     }
 
     .cardBoard .flip-card img {
         height: 100px;
-        width: 75px;
+        width: 80px;
     }
     
 }

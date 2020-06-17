@@ -1,6 +1,7 @@
 function start() {
     responsive()
     createBoard()
+    showUserTime()
 }
 
 function responsive() {
@@ -91,7 +92,9 @@ let cardValues = []
 let pairs = []
 let firstCard, secondCard, startTime, endTime
 let storage = window.localStorage;
-times = []
+times = [
+    0
+]
 
 function createBoard() {
     for (card of cards) {
@@ -110,7 +113,7 @@ function createBoard() {
                 `
     }
     disableAllCards()
-    showUserTime()
+    
 }
 
 function startGame() {
