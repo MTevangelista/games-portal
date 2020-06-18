@@ -92,9 +92,7 @@ let cardValues = []
 let pairs = []
 let firstCard, secondCard, startTime, endTime
 let storage = window.localStorage;
-times = [
-    0
-]
+let times = []
 
 function createBoard() {
     for (card of cards) {
@@ -113,7 +111,6 @@ function createBoard() {
                 `
     }
     disableAllCards()
-    
 }
 
 function startGame() {
@@ -196,7 +193,7 @@ const checkCard = (card, value) => {
                 text: `Tempo da partida: ${endTime - startTime}`,
                 icon: "success",
                 button: "ok",
-              });
+            });
             saveUserTime()
             showUserTime()
             resetGame()
@@ -270,11 +267,15 @@ const saveUserTime = () => {
 
 // Local Storage - get
 const showUserTime = () => {
-    times = JSON.parse(storage.getItem('times'))
-    for (let i = 0; i <= times.length; i++) {
-        times.sort(function (a, b) {
-            return a - b
-        })
+    if (localStorage.times) {
+        times = JSON.parse(storage.getItem('times'))
+        for (let i = 0; i <= times.length; i++) {
+            times.sort(function (a, b) {
+                return a - b
+            })
+        }
+        result.innerHTML = `Melhor tempo: ${times[0]}`
+    } else {
+        return
     }
-    result.innerHTML = `Melhor tempo: ${times[0]}`
 }
