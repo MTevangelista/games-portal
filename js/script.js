@@ -25,7 +25,7 @@ const createMobileNavigationBar = (navigation) => {
                    <a href="#"><i class="fas fa-bars"></i></a>
                     <div class="dropdown-content">
                         <a href="index.html">Home</a>
-                        <a href="memory-game.html">Jogos</a>
+                        <a href="games.html">Jogos</a>
                         <a href="news.html">Notícias</a>
                         <a href="about.html">Sobre</a>
                         <a href="contact.html">Contato</a>
@@ -44,7 +44,7 @@ const createWebNavigationBar = (navigation) => {
         `
         <ul>
            <li><a href="index.html">Home</a></li>
-           <li><a href="memory-game.html">Jogos</a></li>
+           <li><a href="games.html">Jogos</a></li>
            <li><a href="news.html">Notícias</a></li>
            <li><a href="about.html">Sobre</a></li>
            <li><a href="contact.html">Contato</a></li>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Games</title>
     <!--Arquivos CSS-->
     <link rel="stylesheet" href="css/style.css">
     <!-- Google fonts -->
@@ -15,37 +15,22 @@
 </head>
 
 <body onload="start()">
-    <header class="header-contact">
+    <header class="header-games">
         <nav id="navigation"></nav>
     </header>
 
-
-    <section class="contact" id="contact">
-        <h2>Mensagem</h2>
-        <form action="https://formspree.io/xoqkwjgq" method="POST">
-
-            <label>Nome:</label>
-            <input type="text" name="name" placeholder="Nome" required>
-
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Email" required>
-
-            <label>Selecione um jogo</label>
-            <select name="game">
-                <option name="memory-game">Jogo da memória</option>
-                <option name="xadrez">Xadrez</option>
-                <option name="quebra-cabeça">Quebra-cabeça</option>
-                <option name="monopoly">Monopoly</option>
-                <option name="uno" disabled>Uno</option>
-                <option name="tic-tac-toe" disabled>jogo da velha</option>
-            </select>
-
-            <label>Comentários:</label>
-            <textarea name="message" required></textarea>
-            <div class="button-box">
-                <button type="submit">Enviar</button>
-            </div>
-        </form>
+    <section class="games">
+        <h1>Jogos</h1>
+        <div class="game">
+            <figure>
+                <img src="./images/memory-game.png" alt="Jogo da memória" title="Jogo da memória">
+                <figcaption>
+                    O jogo da memória é um clássico jogo formado por peças que apresentam uma figura em um dos
+                    lados. Cada figura se repete em duas peças diferentes. Para começar o jogo, as peças são postas com as figuras voltadas para baixo, para que não possam ser vistas.
+                    <a href="memory-game.html">Clique aqui para jogar</a>
+                </figcaption>
+            </figure>
+        </div>
     </section>
 
     <footer class="contact-footer" id="contact-footer">
