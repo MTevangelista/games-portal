@@ -26,7 +26,7 @@ const createMobileNavigationBar = (navigation) => {
                     <div class="dropdown-content">
                         <a href="index.html">Home</a>
                         <a href="memory-game.html">Jogos</a>
-                        <a href="#">Notícias</a>
+                        <a href="news.html">Notícias</a>
                         <a href="about.html">Sobre</a>
                         <a href="contact.html">Contato</a>
                         <a href="#">Login</a>
@@ -45,7 +45,7 @@ const createWebNavigationBar = (navigation) => {
         <ul>
            <li><a href="index.html">Home</a></li>
            <li><a href="memory-game.html">Jogos</a></li>
-           <li><a href="#">Notícias</a></li>
+           <li><a href="news.html">Notícias</a></li>
            <li><a href="about.html">Sobre</a></li>
            <li><a href="contact.html">Contato</a></li>
            <li>

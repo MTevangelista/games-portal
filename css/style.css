@@ -176,6 +176,7 @@ header {
     text-decoration: none;
 }
 
+
 .contact-footer a:active,
 .contact-footer .box a:hover,
 .menuWeb a:active,
@@ -238,7 +239,6 @@ header {
     animation: arrow-down 0.6s infinite alternate ease-in-out;
 }
 
-/* .cardBoard, */
 .comments {
     text-align: center;
     min-height: 100vh;
@@ -247,6 +247,7 @@ header {
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
 }
 
+.news h1,
 .contact h2,
 .about h2,
 .contact-footer h2,
@@ -264,6 +265,7 @@ header {
     border: 2px solid wheat;
 }
 
+.news-article p,
 .about p,
 .comments p {
     margin-top: 1.4em;
@@ -290,6 +292,7 @@ header {
     gap: 2em;
 }
 
+.news-content figure,
 .sub-highlights figure {
     text-align: center;
     margin-top: 50px;
@@ -300,8 +303,8 @@ header {
     border-radius: 2%;
     height: 180px;
     width: 100%;
-    /* object-fit: cover;
-    object-position: left bottom;
+    object-fit: cover;
+    /* object-position: left bottom;
     transition: transform 500ms; */
     transition: transform 500ms;
 }
@@ -311,8 +314,9 @@ header {
 }
 
 .sub-highlights figcaption {
-    text-align: justify;
-    text-indent: 2em;
+    text-align: start;
+    /* text-align: justify; */
+    text-indent: 1em;
     margin-top: 10px;
 }
 
@@ -334,7 +338,6 @@ header {
     color: whitesmoke;
     font-size: 2em;
     transition: text-shadow 1s, color 1s;
-
 }
 
 .contact-footer .icons a:active,
@@ -360,6 +363,7 @@ header {
     color: white;
 }
 
+.header-news,
 .header-memoryGame,
 .header-contact,
 .header-about {
@@ -456,6 +460,65 @@ form textarea {
     border: 2px solid black;
 }
 
+.news {
+    min-height: 100vh;
+    padding: 1em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
+}
+
+.news h1 {
+    text-align: center;
+}
+
+.news-article {
+    margin-top: 3em;
+}
+
+.news-article h2 {
+    text-align: center;
+    font-family: var(--font-family-title);
+    font-size: .6em;
+    line-height: 1.6em;
+}
+
+.news-article figure {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.news-article figure img {
+    box-shadow: 0px 8px 16px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 2%;
+    height: 190px;
+    width: 280px;
+    object-fit: cover;
+    /* object-position: left bottom;
+    transition: transform 500ms; */
+}
+
+.news h3 {
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: .4em;
+}
+
+.news a {
+    font-weight: bold;
+    color: steelblue;
+    margin-top: 1em;
+    text-decoration: underline;
+}
+
+.news-content figure img {
+    box-shadow: 0px 8px 16px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 2%;
+    height: 180px;
+    width: 280px;
+    object-fit: cover;
+    /* object-position: left bottom;
+    transition: transform 500ms; */
+}
+
 .header-memoryGame {
     height: 60px;
     display: flex;
@@ -489,8 +552,6 @@ form textarea {
 .memory-game button:disabled {
     opacity: 0.3;
 }
-
-/* --------------- */
 
 .cardBoard {
     display: flex;
@@ -534,7 +595,8 @@ form textarea {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
+    /* Safari */
     backface-visibility: hidden;
     border-radius: 10%;
     box-shadow: 0px 8px 16px 2px rgba(108, 108, 128, 0.5);
@@ -581,6 +643,16 @@ form textarea {
         font-size: 18px;
     }
 
+    .news-article figure img {
+        height: 280px;
+        width: 360px;
+    }
+
+    .news-content figure img {
+        height: 180px;
+        width: 260px;
+    }
+
     .cardBoard {
         width: 400px;
     }
@@ -620,6 +692,26 @@ form textarea {
     .cardBoard .flip-card img {
         height: 80px;
         width: 55px;
+    }
+
+    .news h1 {
+        font-size: 1.5em;
+    }
+
+    .news-article {
+        margin-bottom: 50px;
+    }
+
+    .news-article h2 {
+        text-align: center;
+        font-size: 1em;
+        line-height: 1.6em;
+        margin-bottom: 10px;
+    }
+
+    .news-article figure img {
+        height: 280px;
+        width: 560px;
     }
 }
 
@@ -671,6 +763,16 @@ form textarea {
         text-indent: 1em;
     }
 
+    .news-article figure img {
+        height: 300px;
+        width: 560px;
+    }
+
+    .news-content figure img {
+        height: 280px;
+        width: 400px;
+    }
+
     .cardBoard {
         width: 420px;
     }
@@ -700,6 +802,17 @@ form textarea {
         height: calc(100vh - 8em - 48px);
     }
 
+    .news-article figure img {
+        border-radius: 10px;
+        height: 300px;
+        width: 760px;
+    }
+
+    .news-content figure img {
+        height: 280px;
+        width: 550px;
+    }
+
     .cardBoard {
         width: 520px;
     }
@@ -713,11 +826,11 @@ form textarea {
         height: 100px;
         width: 80px;
     }
-    
+
 }
 
 /* Se a tela tiver pelo menos 880px largura e 981px de altura vai carregar estes estilos */
-@media (min-width: 880px) and (min-height: 981px){
+@media (min-width: 880px) and (min-height: 981px) {
     .cardBoard {
         width: 800px;
     }
@@ -731,5 +844,5 @@ form textarea {
     .cardBoard .flip-card img {
         height: 120px;
         width: 100px;
-    } 
+    }
 }
