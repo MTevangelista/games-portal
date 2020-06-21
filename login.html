@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!--Arquivos CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+    <!-- Carrega os icons da pagina -->
+    <script src="https://kit.fontawesome.com/15c7c4106e.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="start()">
+    <header class="header-login">
+        <nav id="navigation"></nav>
+    </header>
+
+    <section class="login" id="login">
+        <h1>Entrar</h1>
+        <div class="login-content">
+            <form>
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Email" required>
+
+                <label>Senha:</label>
+                <input type="password" name="password" placeholder="Senha" required>
+               
+                <div class="login-register">
+                    <a href="./register.html">Ainda não possui conta? Cadastre-se</a>
+                </div>
+
+                <div class="button-box">
+                    <a href="index.html" type="submit">Enviar</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <footer class="contact-footer" id="contact-footer">
+        <h2>Contato</h2>
+        <div class="icons">
+            <a target="_blank" href="https://github.com/MTevangelista?tab=repositories">
+                <i class="fab fa-github"></i>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/_matheusrj/">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/matheus01/">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="box">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Jogos</a></li>
+                    <li><a href="news.html">Notícias</a></li>
+                    <li><a href="About.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

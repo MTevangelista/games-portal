@@ -29,8 +29,8 @@ const createMobileNavigationBar = (navigation) => {
                         <a href="news.html">Notícias</a>
                         <a href="about.html">Sobre</a>
                         <a href="contact.html">Contato</a>
-                        <a href="#">Login</a>
-                        <a href="#">Cadastre-se</a>
+                        <a href="login.html">Entrar</a>
+                        <a href="register.html">Cadastre-se</a>
                     </div>
                 </div>
             </li>
@@ -55,8 +55,8 @@ const createWebNavigationBar = (navigation) => {
                        alt="Submenu open">
                     </a>
                    <div class="dropdown-content">
-                       <a href="#">Login</a>
-                       <a href="#">Cadastre-se</a>
+                       <a href="login.html">Entrar</a>
+                       <a href="register.html">Cadastre-se</a>
                    </div>
                 </div>
             </li>

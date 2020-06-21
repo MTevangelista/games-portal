@@ -98,7 +98,6 @@ header {
     display: block;
     font-size: 2em;
     padding: 10px;
-    text-transform: uppercase;
     text-decoration: none;
 }
 
@@ -171,10 +170,8 @@ header {
     font-size: 1.2em;
     font-family: 'Source Code Pro', monospace;
     padding: 10px;
-    text-transform: uppercase;
     text-decoration: none;
 }
-
 
 .contact-footer a:active,
 .contact-footer .box a:hover,
@@ -364,6 +361,7 @@ header {
     color: white;
 }
 
+.header-login,
 .header-games,
 .header-news,
 .header-memoryGame,
@@ -508,7 +506,7 @@ form textarea {
 .game a,
 .news a {
     font-weight: bold;
-    color: steelblue;
+    color: #000bff;
     margin-top: 1em;
     text-decoration: underline;
 }
@@ -656,7 +654,6 @@ form textarea {
     transition: transform 500ms;
 }
 
-
 .game figure img:hover {
     transform: scale(.9);
 }
@@ -665,6 +662,92 @@ form textarea {
     margin-top: 1.2em;
     text-align: justify;
     text-indent: 1em;
+}
+
+.register,
+.login {
+    text-align: center;
+    margin-top: 3em;
+    min-height: 80vh;
+    padding: 1em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
+}
+
+.register-content,
+.login-content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 230px;
+}
+
+.register form,
+.login form {
+    text-align: start;
+    width: 100%;
+}
+
+.register form label,
+.login form label {
+    margin: 20px 0 5px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.register form input,
+.login form input {
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: transparent;
+    color: black;
+    font-style: italic;
+    height: 20px;
+    padding: 15px;
+    width: 100%;
+}
+
+.login-register {
+    text-align: end;
+    margin-top: 5px;
+}
+
+.login-register a {
+    color: #000bff;
+    font-size: 10px;
+}
+
+.button-box a {
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: gray;
+    color: white;
+    margin: 20px 0px 0px 0;
+    padding: 5px 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    height: 30px;
+    width: 150px;
+}
+
+.login .button-box a:hover,
+.login .button-box a:hover {
+    border: 2px solid white;
+}
+
+.register input:focus,
+.login input:focus,
+.login select:focus,
+.register a:focus,
+.login a:focus {
+    outline: none;
+}
+
+.register input:focus-within,
+.login input:focus-within {
+    background: #F0F0F5;
+    border: 2px solid black;
 }
 
 /* Breakpoints */
@@ -706,6 +789,18 @@ form textarea {
         border-radius: 10px;
         height: 270px;
         width: 340px;
+    }
+
+    .register-content,
+    .login-content {
+        max-width: 330px;
+    }
+
+    .button-box a {
+        margin: 20px 0px 0px 0;
+        padding: 5px 0 20px;
+        height: 30px;
+        width: 180px;
     }
 }
 
@@ -755,6 +850,11 @@ form textarea {
         height: 370px;
         width: 440px;
     }
+
+    .register-content,
+    .login-content {
+        max-width: 430px;
+    }
 }
 
 @media (min-width: 625px) {
@@ -762,6 +862,8 @@ form textarea {
         font-size: 20px;
     }
 
+    .login,
+    .register,
     .games,
     .contact,
     .about,
@@ -771,6 +873,8 @@ form textarea {
         background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
     }
 
+    .register h1,
+    .login h1,
     .contact h2,
     .about h2,
     .contact-footer h2,
@@ -841,6 +945,12 @@ form textarea {
         width: 450px;
     }
 
+    .button-box a {
+        margin: 20px 0px 0px 0;
+        padding: 5px 0 30px;
+        height: 10px;
+        width: 250px;
+    }
 }
 
 /* Se a tela tiver pelo menos 880px vai carregar estes estilos */
