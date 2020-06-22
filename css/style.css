@@ -84,6 +84,20 @@ header {
     list-style: none;
 }
 
+.menuMobile .dropdown-content  input {
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+}
+
+.menuMobile .dropdown-content input:focus-within {
+    outline: none;
+    border: 1px solid black;
+    background-color:  #ccc;
+    color: black;
+}
+
 .menuMobile a:active,
 .menuMobile a:hover {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
@@ -155,7 +169,32 @@ header {
 .menuWeb ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 5px;
+}
+
+.menuWeb li input {
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.menuWeb li button {
+    background-color: black;
+    border: none;
+}
+
+.menuWeb li button i {
+    font-size: 16px;
+    color: whitesmoke;
+    border-radius: 10px;
+}
+
+.menuWeb li input:focus-within {
+    outline: none;
+    border: 1px solid whitesmoke;
+    background-color:  #ccc;
+    color: black;
 }
 
 .contact-footer .box li,

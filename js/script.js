@@ -8,7 +8,7 @@ function responsive() {
     const width = screen.width
     const navigation = document.getElementById('navigation')
 
-    if (width <= 625) {
+    if (width <= 820) {
         createMobileNavigationBar(navigation)
     } else {
         createWebNavigationBar(navigation)
@@ -25,6 +25,8 @@ const createMobileNavigationBar = (navigation) => {
                    <a href="#"><i class="fas fa-bars"></i></a>
                     <div class="dropdown-content">
                         <a href="index.html"><i class="fas fa-home"></i></a>
+                        <input type="text" placeholder="Buscar">
+                        <span> <i class="fas fa-search"></i></span>       
                         <a href="games.html">Jogos</a>
                         <a href="news.html">Notícias</a>
                         <a href="about.html">Sobre</a>
@@ -43,12 +45,16 @@ const createWebNavigationBar = (navigation) => {
     navigation.innerHTML =
         `
         <ul>
-           <li><a href="index.html"><i class="fas fa-home"></i></a></li>
-           <li><a href="games.html">Jogos</a></li>
-           <li><a href="news.html">Notícias</a></li>
-           <li><a href="about.html">Sobre</a></li>
-           <li><a href="contact.html">Contato</a></li>
-           <li>
+            <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+            <li><a href="games.html">Jogos</a></li>
+            <li><a href="news.html">Notícias</a></li>
+            <li>
+                <input type="text" placeholder="Buscar">
+                <button><i class="fas fa-search"></i></button>
+            </li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="contact.html">Contato</a></li>
+            <li>
                 <div class="dropdown">
                    <a href="#">Entrar
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/236520/arrow_down.svg"
