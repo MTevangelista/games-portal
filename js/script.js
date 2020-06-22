@@ -24,7 +24,7 @@ const createMobileNavigationBar = (navigation) => {
                 <div class="dropdown">
                    <a href="#"><i class="fas fa-bars"></i></a>
                     <div class="dropdown-content">
-                        <a href="index.html">Home</a>
+                        <a href="index.html"><i class="fas fa-home"></i></a>
                         <a href="games.html">Jogos</a>
                         <a href="news.html">Notícias</a>
                         <a href="about.html">Sobre</a>
@@ -43,7 +43,7 @@ const createWebNavigationBar = (navigation) => {
     navigation.innerHTML =
         `
         <ul>
-           <li><a href="index.html">Home</a></li>
+           <li><a href="index.html"><i class="fas fa-home"></i></a></li>
            <li><a href="games.html">Jogos</a></li>
            <li><a href="news.html">Notícias</a></li>
            <li><a href="about.html">Sobre</a></li>
