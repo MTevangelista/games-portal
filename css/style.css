@@ -243,6 +243,7 @@ header {
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
 }
 
+.pricing-table h1,
 .games h1,
 .news h1,
 .contact h2,
@@ -283,6 +284,7 @@ header {
     padding: 1em;
 }
 
+.pricing-table .grid,
 .sub-highlights .grid {
     display: grid;
     /* Define o espaçamento entre cada linha ou cada coluna */
@@ -361,6 +363,7 @@ header {
     color: white;
 }
 
+.header-home,
 .header-login,
 .header-games,
 .header-news,
@@ -377,6 +380,7 @@ header {
     text-align: center;
 }
 
+.pricing-table,
 .games,
 .contact,
 .about {
@@ -432,6 +436,7 @@ form textarea {
     justify-content: center;
 }
 
+.pricing-table tfoot button,
 .memory-game button,
 .contact button {
     border: 1px solid black;
@@ -543,6 +548,8 @@ form textarea {
     margin: 20px 0px 0px 20px;
 }
 
+.pricing-table tfoot button:hover,
+.pricing-table tfoot button:active,
 .contact button:hover,
 .contact button:active,
 .memory-game button:active,
@@ -636,8 +643,6 @@ form textarea {
     font-size: 12px;
     border: 1px solid black;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-
-
 }
 
 .game {
@@ -750,6 +755,48 @@ form textarea {
     border: 2px solid black;
 }
 
+.pricing-table .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pricing-table table{
+    max-width: 285px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+	clear: both;
+	border-collapse: collapse;
+	text-transform: uppercase;
+	margin: 50px auto;
+}
+
+.pricing-table th, .pricing-table td {
+    font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+    padding: 25px;
+	text-align: center;
+	/* width: 20%; */
+}
+
+.pricing-table th{
+    color: whitesmoke;
+	font-weight: bold;
+}
+
+.pricing-table td {
+    border-radius: 10px;
+    color: #6C6C80;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.pricing-table tfoot button {
+    outline: none;
+    /* margin: 0px 0px 0px 0; */
+}
+
+
 /* Breakpoints */
 /* Se a tela tiver pelo menos 400px vai carregar estes estilos */
 @media (min-width: 400px) {
@@ -855,6 +902,11 @@ form textarea {
     .login-content {
         max-width: 430px;
     }
+    
+    .pricing-table .grid {
+        text-align: center;
+        grid-template-columns: 240px 240px;
+    }
 }
 
 @media (min-width: 625px) {
@@ -862,6 +914,7 @@ form textarea {
         font-size: 20px;
     }
 
+    .pricing-table,
     .login,
     .register,
     .games,
@@ -951,6 +1004,10 @@ form textarea {
         height: 10px;
         width: 250px;
     }
+
+    .pricing-table {
+        text-align: center;
+    }
 }
 
 /* Se a tela tiver pelo menos 880px vai carregar estes estilos */
@@ -996,6 +1053,11 @@ form textarea {
         border-radius: 10px;
         height: 510px;
         width: 550px;
+    }
+
+    .pricing-table .grid {
+        text-align: center;
+        grid-template-columns: 240px 240px 240px;
     }
 }
 
