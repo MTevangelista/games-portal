@@ -1,4 +1,4 @@
-<h1 align="center">Memory Game</h1>
+<h1 align="center">Games Portal</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/html-v5.2-orange" />
   <img src="https://img.shields.io/badge/css-v3-blue" />
