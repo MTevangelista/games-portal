@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-:root {
+/* :root {
     --text-color: #f1f1f1;
     --font-family-title: 'Press Start 2P', cursive;
-}
+} */
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
@@ -195,7 +195,7 @@ header {
 
 .menuWeb .dropdown a,
 .menuWeb a {
-    color: var(--text-color);
+    color: #f1f1f1;
     display: block;
     font-size: 1.2em;
     font-family: 'Source Code Pro', monospace;
@@ -207,7 +207,7 @@ header {
 .contact-footer .box a:hover,
 .menuWeb a:active,
 .menuWeb a:hover {
-    background-color: var(--text-color);
+    background-color: #f1f1f1;
     border-radius: 10px;
     color: black;
     text-decoration: underline;
@@ -218,7 +218,7 @@ header {
 }
 
 .menuWeb .dropdown img {
-    background-color: var(--text-color);
+    background-color: #f1f1f1;
     border-radius: 20px;
     margin-bottom: 10px;
     height: 12px;
@@ -253,7 +253,7 @@ header {
 
 .header-content figure figcaption {
     font-size: 1.2em;
-    font-family: var(--font-family-title);
+    font-family: 'Press Start 2P', cursive;
     font-weight: lighter;
     font-style: italic;
 }
@@ -282,7 +282,7 @@ header {
 .highlight h1,
 .sub-highlights h2,
 .comments h2 {
-    font-family: var(--font-family-title);
+    font-family: 'Press Start 2P', cursive;
     font-size: 1.2em;
 }
 
@@ -303,7 +303,7 @@ header {
 }
 
 .comments .userComments {
-    border: 2px solid blanchedalmond;
+    /* border: 2px solid blanchedalmond; */
     border-radius: 10px;
     margin-top: 40px;
 }
@@ -448,7 +448,7 @@ form textarea {
 .contact form select {
     background: #F0F0F5;
     border-radius: 8px;
-    border: 1 px solid black;
+    border: 1px solid black;
     color: #6C6C80;
     font-size: 16px;
     padding: 16px 24px;
@@ -511,7 +511,7 @@ form textarea {
 
 .news-article h2 {
     text-align: center;
-    font-family: var(--font-family-title);
+    font-family: 'Press Start 2P', cursive;
     font-size: .6em;
     line-height: 1.6em;
 }
@@ -564,7 +564,7 @@ form textarea {
 }
 
 .memory-game h1 {
-    font-family: var(--font-family-title);
+    font-family: 'Press Start 2P', cursive;
     font-size: 1.2em;
 }
 
@@ -624,7 +624,6 @@ form textarea {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 10%;
     box-shadow: 0px 8px 16px 2px rgba(108, 108, 128, 0.5);
@@ -955,7 +954,6 @@ form textarea {
     .about .experience,
     .userComment {
         text-align: center;
-        border: 3px solid #ccc;
         border-radius: 10px;
         width: 66vw;
         margin: 30px auto;
