@@ -164,6 +164,10 @@ header {
     padding: 5px;
 }
 
+.menuWeb .dropdown {
+    display: block;
+}
+
 .menuWeb li input {
     height: 30px;
     border-radius: 10px;
