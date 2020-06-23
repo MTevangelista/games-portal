@@ -147,7 +147,6 @@ header {
 }
 
 .menuWeb {
-    /* fsdfdsds */
     display: none; 
     background-color: black;
     box-shadow: 0px 8px 16px 2px rgba(0, 0, 0, 0.3);
@@ -711,7 +710,6 @@ form textarea {
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
 }
 
-
 .register-content,
 .login-content {
     display: flex;
@@ -884,6 +882,7 @@ form textarea {
 
 /* Se a tela tiver pelo menos 560px vai carregar estes estilos */
 @media (min-width: 560px) {
+    .pricing-table .grid,
     .sub-highlights .grid {
         grid-template-columns: 240px 240px;
     }
@@ -932,11 +931,6 @@ form textarea {
     .login-content {
         max-width: 430px;
     }
-
-    .pricing-table .grid {
-        text-align: center;
-        grid-template-columns: 240px 240px;
-    }
 }
 
 @media (min-width: 625px) {
@@ -965,7 +959,7 @@ form textarea {
     .sub-highlights h2,
     .comments h2 {
         font-size: 1.5em;
-        /* margin-top: 2em; */
+        margin-top: 2em;
     }
 
     .about .experience,
