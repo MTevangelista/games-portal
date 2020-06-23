@@ -68,30 +68,32 @@
 
     <section class="contact" id="contact">
         <h1>Mensagem</h1>
-        <form action="https://formspree.io/xoqkwjgq" method="POST">
+        <div class="contact-content">
+            <form action="https://formspree.io/xoqkwjgq" method="POST">
 
-            <label>Nome:</label>
-            <input type="text" name="name" placeholder="Nome" required>
+                <label>Nome:</label>
+                <input type="text" name="name" placeholder="Nome" required>
 
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Email" required>
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Email" required>
 
-            <label>Selecione um jogo</label>
-            <select name="game">
-                <option id="memory-game">Jogo da memória</option>
-                <option id="xadrez">Xadrez</option>
-                <option id="quebra-cabeça">Quebra-cabeça</option>
-                <option id="monopoly">Monopoly</option>
-                <option id="uno" disabled>Uno</option>
-                <option id="tic-tac-toe" disabled>jogo da velha</option>
-            </select>
+                <label>Selecione um jogo</label>
+                <select name="game">
+                    <option id="memory-game">Jogo da memória</option>
+                    <option id="xadrez">Xadrez</option>
+                    <option id="quebra-cabeça">Quebra-cabeça</option>
+                    <option id="monopoly">Monopoly</option>
+                    <option id="uno" disabled>Uno</option>
+                    <option id="tic-tac-toe" disabled>jogo da velha</option>
+                </select>
 
-            <label>Comentários:</label>
-            <textarea name="message" required></textarea>
-            <div class="button-box">
-                <button type="submit">Enviar</button>
-            </div>
-        </form>
+                <label>Comentários:</label>
+                <textarea name="message" required></textarea>
+                <div class="button-box">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
     </section>
 
     <footer class="contact-footer" id="contact-footer">

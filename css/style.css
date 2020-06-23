@@ -427,6 +427,12 @@ header {
     min-height: 85vh;
 }
 
+.contact-content {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+
 .contact form {
     text-align: start;
 }
@@ -446,7 +452,7 @@ form textarea {
     font-style: italic;
     height: 20px;
     padding: 15px 15px;
-    width: 70vw;
+    width: 250px;
 }
 
 .contact form select {
@@ -459,7 +465,7 @@ form textarea {
 }
 
 .contact form textarea {
-    font-size: 1em;
+    font-size: 16px;
     height: 100px;
 }
 
@@ -697,6 +703,7 @@ form textarea {
     padding: 1em;
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 46%, rgba(159, 159, 159, 1) 100%);
 }
+
 
 .register-content,
 .login-content {
@@ -951,7 +958,7 @@ form textarea {
     .sub-highlights h2,
     .comments h2 {
         font-size: 1.5em;
-        margin-top: 4em;
+        /* margin-top: 2em; */
     }
 
     .about .experience,
