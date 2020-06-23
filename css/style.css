@@ -1047,7 +1047,6 @@ form textarea {
         grid-template-columns: repeat(3, 240px);
         align-content: center;
         justify-content: center;
-        height: calc(100vh - 8em - 48px);
     }
 
     .news-article figure img {
