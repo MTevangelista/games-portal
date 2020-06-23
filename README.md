@@ -1,4 +1,4 @@
-<h1 align="center">Games Portal</h1>
+<h1 align="center">Memory Game</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/html-v5.2-orange" />
   <img src="https://img.shields.io/badge/css-v3-blue" />
@@ -12,20 +12,26 @@
   - [Disciplina de Interfaces com HTML e CSS](#disciplina-de-interfaces-com-html-e-css)
   - [Disciplina de Javascript](#disciplina-de-javascript)
   - [Feito Com](#feito-com)
+- [Começando](#come%C3%A7ando)
+  - [Pré-requisitos](#pr%C3%A9-requisitos)
+  - [Estrutura de Arquivos](#estrutura-de-arquivos)
+  - [Instalação](#instala%C3%A7%C3%A3o)
+  - [Edição](#edi%C3%A7%C3%A3o)
+- [Contribuição](#contribui%C3%A7%C3%A3o)
 - [Contato](#contato)
 
 ## Sobre o Projeto
 
-Este site / sistema web propiciará a integração entre as disciplinas regulares de Interfaces Web e Javascript.
+Este site / sistema web proporciona a integração entre as disciplinas regulares de Interfaces Web e Javascript.
+
+Na disciplina de Javascript, foi o desenvolvimento de um jogo da memória utilizando as
+técnicas desta disciplina. Descrição da parte do [javascript](#no-projeto-de-javascript).
+
+Para a disciplina de Interfaces Web foi o desenvolvimento de um portal de games, contendo o detalhamento a seguir. O projeto se adequa em diferentes dispositivos, sendo responsivo. Portanto, foi necessário utilizar as media-queries necessárias para uma correta visualização em celulares, tablets e desktops, mesmo que de forma simplificada.
 
 ### Disciplina de Interfaces com HTML e CSS
 
-Na disciplina de Javascript, você construirá um jogo da memória utilizando as
-técnicas desta disciplina. Descrição da parte do [javascript](#no-projeto-de-javascript).
-
-Para a disciplina de Interfaces Web será o desenvolvimento de um portal de games, contendo o detalhamento a seguir. Lembre-se de que seu projeto deverá prever o uso em diferentes dispositivos, sendo responsivo. Para tanto, use as media-queries necessárias para uma correta visualização em celulares, tablets e desktops, mesmo que de forma simplificada.
-
-Etapas do projeto:
+Etapas do projeto :
 
 ### Etapa 1:
 
@@ -41,7 +47,11 @@ Etapas do projeto:
 
 - Construa uma página de detalhamento do seu portal de jogos, denominada
 “Sobre”. Esta página deverá seguir a estrutura estética aplicada na criação do logotipo,
-contendo o seu nome ou sobrenome. 
+contendo o seu nome ou sobrenome. Para criação do logotipo, utilizem as ferramentas
+gratuitas e simplificadas: 
+- Canva (https://www.canva.com/pt_br/);
+- FreeLogo Design (https://pt.freelogodesign.org/);
+- Logo Genio (https://www.logogenio.pt/design-de-logotipo).
 
 - Nesse detalhamento, insira, no mínimo, dois parágrafos expondo a história do seu game,
 e mais dois parágrafos detalhando a estrutura do projeto integrado entre as DRs de
@@ -85,7 +95,7 @@ desenvolvimento.
 - Ao acessar o link principal, dê acesso ao jogo da memória, com topo e rodapé
 seguindo a estética das outras páginas.
 
-### Disciplina de Javascript
+### No projeto de Javascript
 
 Um aplicativo que apresenta um tabuleiro de jogo da memória (4x4, 8 pares de figuras), um botão que permita iniciar/reiniciar o jogo e um botão para mostrar o melhor tempo de jogo (que deve ser armazenado entre desligamentos do aplicativo). Além disso, Nossas 16 figuras são as cartas que precisamos parear.
 
@@ -104,6 +114,65 @@ Segue abaixo o que foi utilizado:
 - [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) - HTML(Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico da web. Define o significado e a estrutura do conteúdo da web.
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) - CSS (Cascading Style Sheets ou Folhas de Estilo em Cascata) é uma linguagem de estilo usada para descrever a apresentação de um documento escrito em HTML ou em XML (incluindo várias linguagens em XML como SVG, MathML ou XHTML). O CSS descreve como elementos são mostrados na tela, no papel, na fala ou em outras mídias.
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - JavaScript® (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes sem browser, tais como node.js,  Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de orientação a objetos, imperativos e declarativos (como por exemplo a programação funcional).
+
+## Começando
+
+Para conseguir utilizar ou visualizar o projeto, seja através do Visual Studio Code ou outro editor de código, siga os passos abaixo:
+
+### Pré-requisitos
+
+Antes de seguirmos para as configurações e uso do projeto, é ideal que você tenha o git instalado e configurado, para isso você pode seguir o link abaixo.
+
+[Git - Book](https://git-scm.com/book/pt-br/v2)
+
+### Estrutura de Arquivos
+
+A estrutura de arquivos está da seguinte maneira:
+
+```bash
+games-portal
+├── css/
+│   ├── style.css
+│   │
+│   images/
+│   │
+│   js/
+│   ├── script.js
+│   │
+│   ├── css/
+│       └── style.css
+│     
+├── about.html
+├── contact.html
+├── games.html
+├── home.html
+├── index.html
+├── login.html
+├── memory-game.html
+├── news.html
+├── register.html
+└── README.md
+```
+
+### Instalação
+
+- Para instalar e utilizar esse projeto, o processo é bem simples. Basta utilizar o seguinte comando no terminal:
+
+```sh
+git clone https://github.com/MTevangelista/memory-game.git
+```
+---
+
+## Contribuição
+
+Contribuições são o que fazem a comunidade open source um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
+
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/FeatureIncrivel`)
+3. Adicione suas mudanças (`git add .`)
+4. Comite suas mudanças (`git commit -m 'Adicionando uma Feature incrível!`)
+5. Faça o Push da Branch (`git push origin feature/FeatureIncrivel`)
+6. Abra um Pull Request
 
 ## Contato
 
