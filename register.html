@@ -12,14 +12,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+Pro&display=swap"
         rel="stylesheet">
     <!-- Logo do site na barra de endereço do navegador -->
-    <link rel="sortcut icon" href="./images/logo.png" type="image/png"/>;
+    <link rel="sortcut icon" href="./images/logo.png" type="image/png" />
     <!-- Carrega os icons da pagina -->
     <script src="https://kit.fontawesome.com/15c7c4106e.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="start()">
+<body>
     <header class="header-login">
-        <nav id="navigation"></nav>
+        <nav class="menuMobile">
+            <ul>
+                <li>
+                    <div class="dropdown">
+                        <a href="#"><i class="fas fa-bars"></i></a>
+                        <div class="dropdown-content">
+                            <a href="index.html"><i class="fas fa-home"></i></a>
+                            <input type="text" placeholder="Buscar">
+                            <span> <i class="fas fa-search"></i></span>
+                            <a href="games.html">Jogos</a>
+                            <a href="news.html">Notícias</a>
+                            <a href="about.html">Sobre</a>
+                            <a href="contact.html">Contato</a>
+                            <a href="login.html">Entrar</a>
+                            <a href="register.html">Cadastre-se</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="menuWeb">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="games.html">Jogos</a></li>
+                <li><a href="news.html">Notícias</a></li>
+                <li>
+                    <input type="text" placeholder="Buscar">
+                    <button><i class="fas fa-search"></i></button>
+                </li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="contact.html">Contato</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a href="#">Entrar
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/236520/arrow_down.svg"
+                                alt="Submenu open">
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="login.html">Entrar</a>
+                            <a href="register.html">Cadastre-se</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <section class="register" id="register">
@@ -68,8 +112,6 @@
             </nav>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 
 </html>
